@@ -77,7 +77,14 @@ module bottom(){
 
 module legs(){
   module leg(){
-    cube([0.3,1,4],center=true);
+    difference(){
+      cube([0.3,1,4],center=true);
+      
+      translate([0,-0.8,-2])rotate([20,0,0])cube([1,1,2],center=true);
+      translate([0,-0.75,-2])rotate([30,0,0])cube([1,1,2],center=true);
+      translate([0,0.8,-2])rotate([-20,0,0])cube([1,1,2],center=true);
+      translate([0,0.75,-2])rotate([-30,0,0])cube([1,1,2],center=true);
+    }
   }
   
   translate([0,2.5,0])leg();
