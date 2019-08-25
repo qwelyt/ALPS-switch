@@ -31,7 +31,12 @@ module top(){
       union(){
         cube([12,11,7],center=true);
         cube([12.5,11,6],center=true);
-        cube([6,12,6],center=true);
+        difference(){
+          cube([6,12,7],center=true);
+          translate([0,6,3.7])rotate([45,0,0])cube([7,1,2],center=true);
+          translate([0,-6,3.7])rotate([-45,0,0])cube([7,1,2],center=true);
+        }
+        
       }
       translate([12*0.5-0.299,11*0.5-1,-2.5])d();
       translate([12*0.5-0.299,-11*0.5+1,-2.5])d();
@@ -65,9 +70,9 @@ module bottom(){
     mirror([1,0,0])e();
   }
   
-  cube([12,13,4],center=true);
-  translate([0,13*0.51,0])bSide();
-  translate([0,-13*0.51,0])rotate([0,0,180])bSide();
+  cube([12,13.5,4],center=true);
+  translate([0,13.5*0.51,0])bSide();
+  translate([0,-13.5*0.51,0])rotate([0,0,180])bSide();
 }
 
 module legs(){
