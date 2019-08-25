@@ -91,8 +91,11 @@ module legs(){
   translate([0.254,-2.5,0])leg();
 }
 
-translate([0,0,11])stem();
-translate([0,0,2.5])top();
-bottom();
-translate([-(13*0.5-2),0,-4])legs();
-  
+union(){
+  translate([0,0,11])stem();
+  translate([0,0,2.5])top();
+  bottom();
+  translate([-(13*0.5-2),0,-4])legs();
+}
+
+//translate([20,0,0])import("ALPS-switch.stl");
